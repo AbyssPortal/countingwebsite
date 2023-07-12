@@ -1,0 +1,61 @@
+<body style="background-color: black;">
+    <style>
+        a {
+            color: rgb(45, 240, 45);
+            font-size: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+
+        textarea {
+            color: rgb(45, 240, 45);
+            background-color: black;
+            resize: none;
+            border-color: rgb(45, 240, 45);
+            font-size: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            width: 50%;
+            height: 70px;
+            overflow: hidden;
+        }
+
+        button {
+            color: rgb(45, 240, 45);
+            font-size: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: black;
+            border-color: rgb(45, 240, 45);
+            position: relative;
+            bottom: 20px;
+            left: 20px;
+        }
+    </style>
+
+    <a>
+        Your job is to count. <br>
+    </a>
+
+    <a id="number">
+        Current count: 0 <br>
+    </a>
+    <textarea id="input"></textarea>
+    <button onclick="checkCount()">submit</button>
+    <script>
+        count = 0;
+        function checkCount() {
+            console.log(document.getElementById("input").value)
+            if (+document.getElementById("input").value == count + 1) {
+                count++;
+                document.getElementById("number").innerHTML = `Current count: ${count} <br>`;
+                document.getElementById("number").style.color = "rgb(45, 240, 45)";
+            }
+            else {
+                count = 0;
+                document.getElementById("number").innerHTML = `Current count: ${count} <br>`;
+                document.getElementById("number").style.color = "red";
+            }
+            document.getElementById("input").value = "";
+        }
+    </script>
+
+</body>
